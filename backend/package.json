@@ -1,0 +1,23 @@
+{
+  "name": "gusty_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "run.js",
+  "dependencies": {
+    "async": "^2.1.5",
+    "json2csv": "^3.7.3",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.0",
+    "nodemailer": "^3.1.7",
+    "nodemailer-smtp-transport": "^2.7.2",
+    "request": "^2.81.0",
+    "twitter": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node run.js"
+  },
+  "author": "Tal David Shitrit",
+  "license": "ISC"
+}

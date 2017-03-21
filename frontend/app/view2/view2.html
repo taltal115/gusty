@@ -1,0 +1,46 @@
+
+<h2>{{StarterTest}}</h2>
+<select class="form-control" ng-model="selectCity" ng-change="getCityListings()">
+  <option value={{x}} ng-repeat="x in cities">{{x}}</option>
+</select>
+<table ng-show="selectCity" class="table table-hover table-striped table-condensed table-responsive">
+  <thead>
+  <tr>
+    <th data-ng-click="setSorter('platform', 'platform')">Picture
+      <span ng-show="sorterStates.platform" data-ng-class="{'glyphicon glyphicon glyphicon-sort-by-order': sorterStates.platform==1, 'glyphicon glyphicon glyphicon-sort-by-order-alt': sorterStates.platform==2 }"></span>
+    </th>
+    <th data-ng-click="setSorter('name', 'name')">Title
+      <span ng-show="sorterStates.name" data-ng-class="{'glyphicon glyphicon-sort-by-alphabet': sorterStates.name==1, 'glyphicon glyphicon-sort-by-alphabet-alt': sorterStates.name==2 }"></span>
+    </th>
+    <th data-ng-click="setSorter('username', 'username')">Address
+      <span ng-show="sorterStates.username" data-ng-class="{'glyphicon glyphicon-sort-by-alphabet': sorterStates.username==1, 'glyphicon glyphicon-sort-by-alphabet-alt': sorterStates.username==2 }"></span>
+    </th>
+  </tr>
+  </thead>
+  <tr ng-repeat="item in listings" ng-click="open(item)" style="cursor: pointer;">
+    <td><img ng-src="{{item.listing.picture_url}}" alt="" style="width: 50%;"></td>
+    <td>{{item.listing.name}}</td>
+    <td>{{item.listing.public_address}}</td>
+  </tr>
+</table>
+
+<script type="text/ng-template" id="myModalContent.html">
+  <div class="modal-header">
+    <h3 class="modal-title">{{item.listing.name}}</h3>
+  </div>
+  <div class="modal-body" style="display: flex;">
+    <img ng-src="{{item.listing.picture_url}}" alt="" style="width: 50%;">
+    <h3 style="margin: auto auto;padding: 25px;">Property address: {{item.listing.public_address}}</h3>
+  </div>
+  <br>
+  <div ng-repeat="review in reviews" style="padding: 20px;">
+    <h3>created by: {{review.author.first_name}} <span class="pull-right">{{review.created_at | date}}</span></h3>
+    <div><p>{{review.comments}}</p></div>
+    <hr>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</script>

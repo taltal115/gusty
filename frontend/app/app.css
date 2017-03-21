@@ -1,0 +1,14 @@
+/* app css stylesheet */
+#loader{
+  font-size: 40px;
+  position: fixed;
+  margin: auto auto;
+  top: 0;
+  background: #333;
+  text-align: center;
+  width: 100%;
+  line-height: 10;
+  height: 100%;
+  color: #fff;
+  opacity: 0.5;
+}
