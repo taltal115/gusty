@@ -89,7 +89,7 @@ function sendFile(filePath, callback) {
     //@TODO: set email to dev@guesty.com
     var options = {
         from: 'taltal115@gmail.com',
-        to: 'taltal115@gmail.com',
+        to: 'taltal115@gmail.com,dev@guesty.com',
         subject: 'GustyTest',
         html: '<h1>Check out the file bellow</h1>',
         attachments: [{path:filePath }]
